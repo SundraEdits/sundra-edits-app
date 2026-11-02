@@ -33,6 +33,10 @@ jobs:
         with:
           gradle-version: '8.9'
 
+      - name: Generate SHA-1 Fingerprint
+        run: gradle signingReport
+        working-directory: extracted/SUNDRA_EDITS_Android
+
       - name: Build Debug APK
         run: gradle assembleDebug --stacktrace
         working-directory: extracted/SUNDRA_EDITS_Android
